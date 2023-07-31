@@ -22,7 +22,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 
-public class CableTvController {
+public class ShowmaxCableTvController {
     private final RestTemplate restTemplate;
 
     @PostConstruct
@@ -33,12 +33,12 @@ public class CableTvController {
         restTemplate.setMessageConverters(converters);
     }
 
-    @PostMapping("/requery")
-    public ResponseEntity<TransactionStatusResponse> queryStatus (@RequestBody TransactionStatusRequest transactionStatusRequest) {
+    @PostMapping("/Showmaxrequery")
+    public ResponseEntity<TransactionStatusResponse> queryStatus(@RequestBody TransactionStatusRequest transactionStatusRequest) {
 
         String username = "gocashsq15@gmail.com";
         String password = "Projectpassword!";
-        String authToken = getAuthToken(username,password);
+        String authToken = getAuthToken(username, password);
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
@@ -54,9 +54,12 @@ public class CableTvController {
                 TransactionStatusResponse.class
         );
     }
+
     private String getAuthToken(String username, String password) {
         String credentials = username + ":" + password;
         byte[] credentialsBytes = credentials.getBytes(StandardCharsets.UTF_8);
         return Base64.getEncoder().encodeToString(credentialsBytes);
     }
+
+
 }
