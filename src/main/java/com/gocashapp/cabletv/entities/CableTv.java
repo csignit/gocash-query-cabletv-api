@@ -9,7 +9,7 @@ import lombok.*;
 
 public class CableTv {
     private SubscriptionType subscriptionType;
-    private String requestId;
+    private String request_id;
     private Integer SmartCardNumber;
     private TransactionStatus transactionStatus;
 

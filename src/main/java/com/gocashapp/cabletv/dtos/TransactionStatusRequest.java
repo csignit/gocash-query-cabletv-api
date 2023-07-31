@@ -8,5 +8,5 @@ import lombok.*;
 @Builder
 public class TransactionStatusRequest {
 
-    private String requestId;
+    private String request_id;
 }
