@@ -25,7 +25,7 @@ public class Transactions {
     private String email;
     private String phone;
     private Object name; // Change the type to a suitable one if available
-    private String extras;
+    //    private String extras;
     private Integer convenience_fee;
     private Double amount;
     private String platform;
