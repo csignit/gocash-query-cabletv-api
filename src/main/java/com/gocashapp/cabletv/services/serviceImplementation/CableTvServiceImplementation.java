@@ -2,7 +2,7 @@ package com.gocashapp.cabletv.services.serviceImplementation;
 
 import com.gocashapp.cabletv.dtos.ShowmaxTransactionStatusResponse;
 import com.gocashapp.cabletv.dtos.TransactionStatusRequest;
-import com.gocashapp.cabletv.dtos.TransactionStatusResponse;
+import com.gocashapp.cabletv.dtos.ApiResponse;
 import com.gocashapp.cabletv.services.CableTvService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +35,7 @@ public class CableTvServiceImplementation implements CableTvService {
     }
 
     @Override
-    public TransactionStatusResponse queryStatus(TransactionStatusRequest transactionStatusRequest) {
+    public ApiResponse queryStatus(TransactionStatusRequest transactionStatusRequest) {
 
         String username = "gocashsq15@gmail.com";
         String password = "Projectpassword!";
@@ -48,10 +48,10 @@ public class CableTvServiceImplementation implements CableTvService {
 
         HttpEntity<TransactionStatusRequest> transactionStatusRequestHttpEntity = new HttpEntity<>
                 (transactionStatusRequest, httpHeaders);
-        ResponseEntity<TransactionStatusResponse> responseEntity = restTemplate.postForEntity(
+        ResponseEntity<ApiResponse> responseEntity = restTemplate.postForEntity(
                 "https://api-service.vtpass.com/api/requery",
                 transactionStatusRequestHttpEntity,
-                TransactionStatusResponse.class
+                ApiResponse.class
         );
         return responseEntity.getBody();
     }

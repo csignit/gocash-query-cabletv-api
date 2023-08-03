@@ -1,6 +1,5 @@
 package com.gocashapp.cabletv.dtos;
 
-import com.gocashapp.cabletv.entities.SubscriptionType;
 import com.gocashapp.cabletv.entities.TransactionContent;
 import com.gocashapp.cabletv.entities.TransactionDate;
 import lombok.AllArgsConstructor;
@@ -14,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 
-public class TransactionStatusResponse {
+public class ApiResponse {
 //    private SubscriptionType subscriptionType;
 //    private Integer SmartCardNumber;
 //    private String requestId;

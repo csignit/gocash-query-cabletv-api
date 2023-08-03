@@ -2,12 +2,10 @@ package com.gocashapp.cabletv.services;
 
 import com.gocashapp.cabletv.dtos.ShowmaxTransactionStatusResponse;
 import com.gocashapp.cabletv.dtos.TransactionStatusRequest;
-import com.gocashapp.cabletv.dtos.TransactionStatusResponse;
-
-import java.util.List;
+import com.gocashapp.cabletv.dtos.ApiResponse;
 
 public interface CableTvService {
-    TransactionStatusResponse queryStatus(TransactionStatusRequest transactionStatusRequest);
+    ApiResponse queryStatus(TransactionStatusRequest transactionStatusRequest);
 
     ShowmaxTransactionStatusResponse getQueryStatus(TransactionStatusRequest transactionStatusRequest);
 }
